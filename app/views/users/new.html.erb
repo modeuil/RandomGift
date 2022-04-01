@@ -1,0 +1,53 @@
+<h1 class="center">Subscription</h1>
+
+<% if @user.errors.any?  %>
+  <div>
+    <% @user.errors.full_messages.each do |message| %>
+      <p><% message %></p>
+      <%= puts message %>
+    <% end %>
+  </div>
+
+<% end %>
+
+<%= form_for @user do |f| %>
+
+
+  <div class="input-field col s12">
+    <%= f.text_field :username %>
+    <%= f.label :username %>
+  </div>
+  <div class="input-field col s12">
+    <%= f.email_field :email %>
+    <%= f.label :email %>
+  </div>
+  <div class="input-field col s12">
+    <%= f.text_field :firstname %>
+    <%= f.label :firstname %>
+  </div>
+  <div class="input-field col s12">
+    <%= f.text_field :lastname %>
+    <%= f.label :lastname %>
+  </div>
+  <div class="input-field col s12">
+    <%= f.password_field :password %>
+    <%= f.label :password %>
+  </div>
+  <div class="input-field col s12">
+    <%= f.password_field :password_confirmation %>
+   <%= f.label :password_confirmation %>
+  </div>
+  <div class="input-field col s12">
+    <button type="submit" class="waves-effect waves-light btn">Submit</button>
+  </div>
+
+  </div>
+
+
+<%end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to login", users_path %>
+</div>
