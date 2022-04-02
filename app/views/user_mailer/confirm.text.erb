@@ -5,6 +5,7 @@ Thanks <%= @user.username %> for your subscription
 
 You can validate your subscription with this link :
 
+<%= confirm_user_url(id: @user.id, token: @user.confirmation_token) %>
 
 
 Thanks you and welcome!

@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module RandomGift
   class Application < Rails::Application
-    config.site ={
+    config.site = {
       name: "Random Gift"
     }
     # Initialize configuration defaults for originally generated Rails version.
