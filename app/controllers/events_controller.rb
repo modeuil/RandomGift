@@ -45,8 +45,9 @@ class EventsController < ApplicationController
       for name in group
         j = j- 1
       end
-      flash[:success] =  'Your event was created successfully'
-      UserMailer.gift_test(hash_event[name], group[j],@event['max_amount'], @event['title']).deliver_now
+      person = hash_event[name]
+      mail = group[j]
+      UserMailer.gift_test(person, mail,@event['max_amount'], @event['title']).deliver_now
     end
 
     #@event = EventRandom.new(event_params)
