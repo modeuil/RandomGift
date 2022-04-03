@@ -3,7 +3,7 @@
   <head>
     <title>RandomGift</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -17,15 +17,20 @@
 
   <body>
   <nav>
-    <div class="nav-wrapper">
-      <a href="<%= root_path %>" class="brand-logo">Lorenzo</a>
+    <div class="nav-wrapper deep-purple accent-2">
+      <a href="<%= root_path %>" class="brand-logo">Random Gift</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="<%= new_user_path  %>">Subscription</a></li>
-        <li><a href="collapsible.html">Login</a></li>
+        <% if !current_user.nil? %>
+          <li><a href="<%= new_session_path %>"><%= current_user.firstname %></a></li>
+          <li><a href="/logout">Disconnect</a></li>
+        <% else %>
+          <li><a href="<%= new_user_path  %>">Subscription</a></li>
+          <li><a href="<%= new_session_path %>">Login</a></li>
+        <% end %>
       </ul>
     </div>
   </nav>
-  <div class="container">
+  <main class="container">
     <% if flash[:success] %>
       <li>
         <%= flash[:success] %>
@@ -40,8 +45,22 @@
 
     <%= yield %>
 
-    <%= debug session[:auth] %>
-  </div>
+  </main>
+  <footer class="page-footer deep-purple accent-2">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <p class="grey-text text-lighten-4"> Welcome to my Secret Santa Test 🙌🏽 </p>
+        </div>
+
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2022 Copyright - Lorenzo Chahid
+      </div>
+    </div>
+  </footer>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>

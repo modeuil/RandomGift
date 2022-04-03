@@ -1,0 +1,64 @@
+<h1 class="center title">Event</h1>
+
+<!--
+<%= form_for @event, url: event_path do |f| %>
+  <div class="input-field col s12">
+    <%= f.text_field :title %>
+    <%= f.label :title %>
+  </div>
+  <div class="input-field col ">
+    <div class="input-field nameEmail">
+      <div class="flex">
+        <div>
+          <label>Name :</label>
+          <input type="text" class="input-field" name="name">
+
+        <%= f.label :emails %>
+        <%= f.text_field :emails %>
+        <button type="submit" class="waves-effect waves-light btn special ">add email</button>
+        </div>
+        <div>
+          <label>Name :</label>
+          <input type="text" class="input-field" name="name">
+
+          <%= f.label :emails %>
+          <%= f.text_field :emails %>
+          <button type="submit" class="waves-effect waves-light btn special ">add email</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="input-field col s12">
+    <%= f.number_field :max_amount %>
+    <%= f.label :max_amount %>
+  </div>
+  </div>
+<%end %>
+-->
+
+<%= form_for @event, url: event_path do |f| %>
+  <p class="pulse"> You'll be automatically add to the emails ! Don't Worries</p>
+  <div class="nameEmail">
+    <i class="material-icons prefix">subtitles</i>
+    <input name="title" type="text" placeholder="choose your title"/>
+    <div class=" flex nameEmail s6">
+      <i class="material-icons prefix">account_circle</i>
+      <input name="[0][name]" type="text"/>
+      <i class="material-icons prefix">email</i>
+      <input  name="[0][email]" type="email" placeholder="eg@test.com"/>
+    </div>
+    <div class=" flex">
+      <i class="material-icons prefix">account_circle</i>
+      <input name="[1][name]" type="text"/>
+      <i class="material-icons prefix">email</i>
+      <input name="[1][email]" type="email" placeholder="eg@test.com"/>
+    </div>
+  </div>
+  <i class="material-icons prefix">attach_money</i>
+  <input name="max_amount" type="number" placeholder="0€" />
+  <div class="input-field col s12 mt-6">
+    <button type="submit" class="waves-effect deep-purple accent-2 waves-light btn">create event</button>
+    <button type="submit" class="waves-effect waves-light btn special ">add people +</button>
+  </div>
+
+<% end %>

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  skip_before_action :only_signed_in, only: [:new, :create, :confirm]
+
 
   def new
     @user = User.new
@@ -27,11 +29,19 @@ class UsersController < ApplicationController
       @user.confirmed = true
       @user.confirmation_token= nil
       @user.save(validate:false)
-      session[:auth] = {id: @user.id}
-      redirect_to new_user_path, success: "Your account is actif 🥳"
+      session[:auth] = @user.to_session
+      redirect_to event_path, success: "Your account is actif 🥳"
     else
       redirect_to new_user_path, danger: "This token it's not valid"
     end
+  end
+
+  def event
+
+  end
+
+  def random
+
   end
 
 
