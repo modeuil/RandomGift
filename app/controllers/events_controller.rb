@@ -35,7 +35,7 @@ class EventsController < ApplicationController
     first_pair = assignments[-1][-1]
     assignments << [first_pair, last_pair]
 
-    @event['emails'] = array_email
+    @event['emails'] = assignments
     @event['user_id'] = current_user['id']
     @event.save(validate:false)
     

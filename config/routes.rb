@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "users#new"
 
   get '/event', to: "events#new", as: :event
+  get '/logout', to: "sessions#destroy"
   post '/event', to: "events#random"
 
   resources :sessions, only: [:new, :create, :destroy]

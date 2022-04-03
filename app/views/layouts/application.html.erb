@@ -18,10 +18,11 @@
   <body>
   <nav>
     <div class="nav-wrapper deep-purple accent-2">
-      <a href="<%= root_path %>" class="brand-logo">Lorenzo</a>
+      <a href="<%= root_path %>" class="brand-logo">Random Gift</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <% if current_user %>
-          <li><a href="<%= new_session_path %>">Disconnect</a></li>
+        <% if !current_user.nil? %>
+          <li><a href="<%= new_session_path %>"><%= current_user.firstname %></a></li>
+          <li><a href="/logout">Disconnect</a></li>
         <% else %>
           <li><a href="<%= new_user_path  %>">Subscription</a></li>
           <li><a href="<%= new_session_path %>">Login</a></li>
@@ -49,21 +50,14 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Footer Content</h5>
-          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          <p class="grey-text text-lighten-4"> Welcome to my Secret Santa Test 🙌🏽 </p>
         </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-          </ul>
-        </div>
+
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-        © 2014 Copyright Text
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        © 2022 Copyright - Lorenzo Chahid
       </div>
     </div>
   </footer>

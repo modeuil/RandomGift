@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-
+    session[:auth] = nil
+    redirect_to new_session_path
   end
 end

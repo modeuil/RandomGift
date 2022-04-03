@@ -1,20 +1,13 @@
-<h1 class="center">random</h1>
-
-<h3 class="center"><%= @user.firstname %></h3>
-
+<h1 class="center title">Event</h1>
 
 <!--
 <%= form_for @event, url: event_path do |f| %>
-
-
   <div class="input-field col s12">
     <%= f.text_field :title %>
     <%= f.label :title %>
   </div>
   <div class="input-field col ">
     <div class="input-field nameEmail">
-
-
       <div class="flex">
         <div>
           <label>Name :</label>
@@ -39,35 +32,33 @@
     <%= f.number_field :max_amount %>
     <%= f.label :max_amount %>
   </div>
-
-
-
-
   </div>
-
-
 <%end %>
-
 -->
 
 <%= form_for @event, url: event_path do |f| %>
+  <p class="pulse"> You'll be automatically add to the emails ! Don't Worries</p>
   <div class="nameEmail">
-    <div class=" flex nameEmail">
+    <i class="material-icons prefix">subtitles</i>
+    <input name="title" type="text" placeholder="choose your title"/>
+    <div class=" flex nameEmail s6">
       <i class="material-icons prefix">account_circle</i>
-      <input id="person_name" name="[0][name]" type="text" value="Henry"/>
+      <input name="[0][name]" type="text"/>
       <i class="material-icons prefix">email</i>
-      <input id="person_email" name="[0][email]" type="email" placeholder="eg@test.com"/>
+      <input  name="[0][email]" type="email" placeholder="eg@test.com"/>
     </div>
-    <div class=" flex nameEmail">
+    <div class=" flex">
       <i class="material-icons prefix">account_circle</i>
-      <input id="person_name" name="[1][name]" type="text" value="Henry"/>
+      <input name="[1][name]" type="text"/>
       <i class="material-icons prefix">email</i>
-      <input id="person_email" name="[1][email]" type="email" placeholder="eg@test.com"/>
+      <input name="[1][email]" type="email" placeholder="eg@test.com"/>
     </div>
-    <div class="input-field col s12">
-      <button type="submit" class="waves-effect waves-light btn">Submit</button>
-      <button type="submit" class="waves-effect waves-light btn special ">add email</button>
-    </div>
+  </div>
+  <i class="material-icons prefix">attach_money</i>
+  <input name="max_amount" type="number" placeholder="0€" />
+  <div class="input-field col s12 mt-6">
+    <button type="submit" class="waves-effect deep-purple accent-2 waves-light btn">create event</button>
+    <button type="submit" class="waves-effect waves-light btn special ">add people +</button>
   </div>
 
 <% end %>

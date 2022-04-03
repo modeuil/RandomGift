@@ -25,7 +25,7 @@ name.addEventListener('click', (e)=>{
 
     div_user_profile.appendChild(i_email);
     div_user_profile.appendChild(input_email);
-    div_user_profile.appendChild(btn_delete)
+    //div_user_profile.appendChild(btn_delete)
 
 
     div_user_profile.className = "flex"
@@ -35,8 +35,8 @@ name.addEventListener('click', (e)=>{
     i_email.textContent += "email"
     input_name.name = `[${counter}][name]`
     input_email.name = `[${counter}][email]`
-    btn_delete.textContent += "remove"
-    btn_delete.className = "remove"
+    //btn_delete.textContent += "remove"
+    //btn_delete.className = "remove"
     console.log('hello')
     removeFunction.addEventListener('click', (e) =>{
         e.preventDefault()
