@@ -1,0 +1,73 @@
+<h1 class="center">random</h1>
+
+<h3 class="center"><%= @user.firstname %></h3>
+
+
+<!--
+<%= form_for @event, url: event_path do |f| %>
+
+
+  <div class="input-field col s12">
+    <%= f.text_field :title %>
+    <%= f.label :title %>
+  </div>
+  <div class="input-field col ">
+    <div class="input-field nameEmail">
+
+
+      <div class="flex">
+        <div>
+          <label>Name :</label>
+          <input type="text" class="input-field" name="name">
+
+        <%= f.label :emails %>
+        <%= f.text_field :emails %>
+        <button type="submit" class="waves-effect waves-light btn special ">add email</button>
+        </div>
+        <div>
+          <label>Name :</label>
+          <input type="text" class="input-field" name="name">
+
+          <%= f.label :emails %>
+          <%= f.text_field :emails %>
+          <button type="submit" class="waves-effect waves-light btn special ">add email</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="input-field col s12">
+    <%= f.number_field :max_amount %>
+    <%= f.label :max_amount %>
+  </div>
+
+
+
+
+  </div>
+
+
+<%end %>
+
+-->
+
+<%= form_for @event, url: event_path do |f| %>
+  <div class="nameEmail">
+    <div class=" flex nameEmail">
+      <i class="material-icons prefix">account_circle</i>
+      <input id="person_name" name="[0][name]" type="text" value="Henry"/>
+      <i class="material-icons prefix">email</i>
+      <input id="person_email" name="[0][email]" type="email" placeholder="eg@test.com"/>
+    </div>
+    <div class=" flex nameEmail">
+      <i class="material-icons prefix">account_circle</i>
+      <input id="person_name" name="[1][name]" type="text" value="Henry"/>
+      <i class="material-icons prefix">email</i>
+      <input id="person_email" name="[1][email]" type="email" placeholder="eg@test.com"/>
+    </div>
+    <div class="input-field col s12">
+      <button type="submit" class="waves-effect waves-light btn">Submit</button>
+      <button type="submit" class="waves-effect waves-light btn special ">add email</button>
+    </div>
+  </div>
+
+<% end %>
