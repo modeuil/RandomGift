@@ -15,7 +15,8 @@ class EventsController < ApplicationController
     array_email = []
 
 
-
+    @event['max_amount'] = event_params['max_amount']
+    @event['title'] = event_params['title']
     event_params.each_value { |key| array_name << key["name"] }
     event_params.each_value { |value| array_email << value["email"] }
     array_name << @user.firstname
@@ -44,7 +45,8 @@ class EventsController < ApplicationController
       for name in group
         j = j- 1
       end
-      UserMailer.gift_test(hash_event[name], group[j]).deliver_now
+      flash[:success] =  'Your event was created successfully'
+      UserMailer.gift_test(hash_event[name], group[j],@event['max_amount'], @event['title']).deliver_now
     end
 
     #@event = EventRandom.new(event_params)

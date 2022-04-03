@@ -6,9 +6,11 @@ class UserMailer < ApplicationMailer
     mail(to: user.email, subject: "Your subscription to "  + Rails.application.config.site[:name])
   end
 
-  def gift_test(mail, name)
+  def gift_test(mail, name, max_amount, title)
     @name = name
-    mail(to: mail, subject: "Your gift to "  + name)
+    @max_amount = max_amount
+    @title = title
+    mail(to: mail, subject: "Secret Santa ! Open quickly 🎄 "  + name)
   end
 
 
