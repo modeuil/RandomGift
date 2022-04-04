@@ -1,24 +1,46 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
+#Secret santa test
 Things you may want to cover:
 
-* Ruby version
+* Ruby version [3.1.1]  * Rails version [7]
 
-* System dependencies
+Using Package Managers
 
-* Configuration
+    Install rbenv using one of the following approaches.
 
-* Database creation
+Homebrew
 
-* Database initialization
+On macOS or Linux, we recommend installing rbenv with Homebrew.
 
-* How to run the test suite
+    brew install rbenv ruby-build
 
-* Services (job queues, cache servers, search engines, etc.)
+Debian, Ubuntu, and their derivatives
 
-* Deployment instructions
+Note that the version of rbenv that is packaged and maintained in the Debian and Ubuntu repositories is out of date. To install the latest version, it is recommended to install rbenv using git.
 
-* ...
+sudo apt install rbenv
+
+Arch Linux and its derivatives
+
+Archlinux has an AUR Package for rbenv and you can install it from the AUR using the instructions from this wiki page.
+
+Set up rbenv in your shell.
+
+    rbenv init
+
+    rbenv shell 3.1.1
+
+
+After that you can install Gem
+
+    cd randomGift && bundle install
+
+
+Run the server
+
+    mailDev
+
+
+    rails s 
+
